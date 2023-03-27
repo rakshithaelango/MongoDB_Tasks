@@ -1,0 +1,72 @@
+import pymongo
+!apt install mongodb >log
+!service mongodb start
+from pymongo import MongoClient
+client = MongoClient()
+
+db = client
+db = client['Telephone_Directory']
+
+my_collection =db['ids']
+
+my_collection.insert_one({"name" : "mano" , "place" : "chennai" , "contact_no" : 9584758988})
+
+data = [{"id" : 1, "name" : "mano" , "phone" : 9856321475 , "place" : "mumbai"},
+        {"id" : 2, "name" : "raju" , "phone" : 9863214785 , "place" : "chennai"},
+        {"id" : 3, "name" : "sugi" , "phone" : 9832145874 , "place" : "bangalore"},
+        {"id" : 4, "name" : "sunil" , "phone" : 7854125478 , "place" : "chennai"}]
+        
+my_collection.insert_many(data)
+
+all_databases = Client.list_database_names()
+print(all_databases)
+
+all_collections = db.list_collection_names()
+print(all_collections)
+
+for i in my_collection({},{'_id':0}):
+    print(i)
+    
+client = MongoClient
+db = client
+db = client['Telephone_Directory']
+
+query = { "name": "mano" }
+
+mydoc = myc_collection.find(myquery)
+
+for x in mydoc:
+  print(x)
+  
+  
+Q = {"name" : "mano"}
+New = {"$set" :{"place" : "salem"}
+
+my_collection.update_one(Q,New)
+for i in my_collection.find({},{_"id":0):
+    print(i)
+    
+my_collection.update_many(Q,New)
+for i in my_collection.find({},{_"id":0):
+    print(i)
+
+my_collection.delete_one({"name":"mano"})
+for i in my_collection():
+    print(i)
+  
+my_collection.delete_many()
+for i in my_collection():
+    print(i)
+  
+id.delete_one({})
+for document in id.find({},{'_id':0}).sort("phone"):
+  print(document)
+  
+
+db = client["db"]
+my_collection = db["telephone directory"]
+mycol.drop()
+
+
+for i in my_collection().limit(1):
+  print(collection)
